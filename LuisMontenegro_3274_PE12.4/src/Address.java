@@ -1,5 +1,7 @@
 /**
    Describes a mailing address.
+   @author: Luis Montenegro
+   Date: 11/13/2022
 */
 public class Address
 {  
@@ -27,14 +29,24 @@ public class Address
       zip = aZip;
    }   
 
-   /**
-      Formats the address.
-      @return the address as a string with three lines
-   */
-   public String format()
-   {  
-      return name + "\n" + street + "\n"
-            + city + ", " + state + " " + zip;
-   }
+
+public String getName() {
+	   return name;
 }
 
+public String getStreet() {
+	   return street;
+}
+
+public String getCity() {
+	   return city;
+}
+
+public String getState() {
+	   return state;
+}
+
+public String getZip() {
+	   return zip;
+}
+}

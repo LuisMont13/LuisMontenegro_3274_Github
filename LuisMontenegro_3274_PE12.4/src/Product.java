@@ -1,6 +1,3 @@
-/**
-   Describes a product with a description and a price.
-*/
 public class Product
 {  
    private String description;

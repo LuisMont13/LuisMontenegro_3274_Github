@@ -1,6 +1,3 @@
-/**
-   Describes a quantity of an article to purchase.
-*/
 public class LineItem
 {  
    private int quantity;
@@ -25,19 +22,16 @@ public class LineItem
    {  
       return theProduct.getPrice() * quantity;
    }
-   
-   /**
-      Formats this item.
-      @return a formatted string of this item
-   */
-   public String format()
-   {  
-      return String.format("%-30s%8.2f%5d%8.2f", 
-         theProduct.getDescription(), theProduct.getPrice(), 
-         quantity, getTotalPrice());
+
+   public String getDescription() {
+	   return theProduct.getDescription();
    }
-
-
-
+   
+   public double getPrice() {
+	   return theProduct.getPrice();
+   }
+   public int getQuantity() {
+		return quantity;
+	}
 }
 

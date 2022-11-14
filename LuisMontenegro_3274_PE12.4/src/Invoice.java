@@ -1,8 +1,4 @@
 import java.util.ArrayList;
-
-/**
-   Describes an invoice for a set of purchased products.
-*/
 public class Invoice
 {  
    private Address billingAddress;
@@ -29,26 +25,7 @@ public class Invoice
       items.add(anItem);
    }
 
-   /**
-      Formats the invoice.
-      @return the formatted invoice
-   */
-   public String format()
-   {  
-      String r =  "                     I N V O I C E\n\n"
-            + billingAddress.format()
-            + String.format("\n\n%-30s%8s%5s%8s\n",
-               "Description", "Price", "Qty", "Total");
-
-      for (LineItem item : items)
-      {  
-         r = r + item.format() + "\n";
-      }
-
-      r = r + String.format("\nAMOUNT DUE: $%8.2f", getAmountDue());
-
-      return r;
-   }
+   
 
    /**
       Computes the total amount due.
@@ -64,15 +41,17 @@ public class Invoice
       return amountDue;
    }
    
-   public Address getBilling() {
+
+   public LineItem getLineItem(int i) {
+	   return (LineItem) items.get(i);
+   }
+   
+   public int getLineItemCount() {
+	   return items.size();
+   }
+   
+   public Address getAddress() {
 	   return billingAddress;
-	   
    }
-
-   public ArrayList<LineItem>getItems(){
-	   return items;
-	   
-   }
-
 }
 
